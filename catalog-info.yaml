@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: node-github-tekton-060625-gitops
+  description: This is GitOps manifest for node-github-tekton-060625   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=node-github-tekton-060625
+    backstage.io/kubernetes-id: node-github-tekton-060625 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: node-github-tekton-060625
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:node-github-tekton-060625
